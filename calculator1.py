@@ -40,17 +40,14 @@ class Calculator:
         Button(master, width=11, height=4, text='C', relief='flat', bg='white', command=self.clear).place(x=270, y=350)
 
     def show(self, value):
-        """Append the value to the current expression."""
         self.entry_value += str(value)
         self.equation.set(self.entry_value)
 
     def clear(self):
-        """Clear the current expression."""
         self.entry_value = ''
         self.equation.set(self.entry_value)
 
     def solve(self):
-        """Evaluate the current expression."""
         try:
             result = eval(self.entry_value)
             self.equation.set(result)
